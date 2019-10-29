@@ -48,9 +48,18 @@ def perhitungan_bersih():
         print("  Penghasilan Kotor\tAsasi\tPenghasilan Bersih")
         print("Rp.", hasil_kotor[i-1], " - ", "Rp.", hitung_asasi[i-1], " = ", "Rp.", bersih[i-1])
 
-def hitung_zakat():
-    print("test11")
-
+def perhitungan_zakat():
+    show_data()
+    i = int(input("Inputkan Key :"))
+    if (i > len(nama)):
+        print("ID tidak ada")
+    else:
+        if bersih[i - 1] >= 3265000 :
+            hitung = bersih[i - 1] * 25/1000
+            zakat.append(hitung)
+            print("Zakat : ","Rp.", int(hitung))
+        else:
+            print("Tidak membayar zakat")
 
 def show_menu():
     print("\n")
@@ -60,7 +69,8 @@ def show_menu():
     print("[3] Edit data")
     print("[4] Delete data")
     print("[5] Perhitungan bersih")
-    print("[6] Exit")
+    print("[6] Perhitungan zakat")
+    print("[7] Exit")
 
     menu = int(input("Masukan Menu > "))
     print("\n")
@@ -75,7 +85,7 @@ def show_menu():
     elif menu == 5:
         perhitungan_bersih()
     elif menu == 6:
-        hitung_zakat()
+        perhitungan_zakat()
     elif menu == 7:
         quit()
     else :
